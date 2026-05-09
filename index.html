@@ -6,26 +6,26 @@
   <title>Мария Светикова — Эксперт по нейросетям</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #fafafa;
-      --surface: #ffffff;
-      --surface2: #f4f4f6;
-      --border: #e8e8ec;
-      --text: #111118;
-      --text-muted: #6b6b80;
-      --accent: #7c3aed;
-      --accent-light: #ede9fe;
-      --accent2: #06b6d4;
-      --accent2-light: #ecfeff;
-      --accent3: #f59e0b;
-      --accent3-light: #fffbeb;
+      --bg: #FAF4EC;
+      --surface: #FFF8F2;
+      --surface2: #F2E8DC;
+      --border: #E4D0C0;
+      --text: #3A2518;
+      --text-muted: #8B6A5A;
+      --accent: #B97A8A;
+      --accent-dark: #9A5E6E;
+      --accent-light: #F5E4EA;
+      --accent2: #D4956A;
+      --accent2-light: #FAEDE3;
+      --accent3: #C4A882;
       --radius: 16px;
-      --shadow: 0 2px 24px rgba(0,0,0,.06);
-      --shadow-md: 0 8px 40px rgba(0,0,0,.10);
+      --shadow: 0 2px 24px rgba(90,40,30,.07);
+      --shadow-md: 0 8px 40px rgba(90,40,30,.12);
     }
 
     html { scroll-behavior: smooth; }
@@ -36,15 +36,26 @@
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    /* ─── HEADER ─── */
+    #sakura-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .55;
+    }
+
+    header, section, footer { position: relative; z-index: 1; }
+
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(250,250,250,.92);
-      backdrop-filter: blur(12px);
+      background: rgba(250,244,236,.93);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
     .header-inner {
@@ -57,14 +68,15 @@
       justify-content: space-between;
     }
     .logo {
-      font-family: 'Manrope', sans-serif;
-      font-weight: 800;
-      font-size: 18px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 22px;
       color: var(--text);
       text-decoration: none;
     }
     .logo span { color: var(--accent); }
-    nav { display: flex; gap: 32px; }
+    nav { display: flex; gap: 32px; align-items: center; }
     nav a {
       text-decoration: none;
       color: var(--text-muted);
@@ -82,7 +94,11 @@
     }
     .btn-nav:hover { opacity: .85; }
 
-    /* ─── SECTIONS ─── */
+    h1, h2, h3, .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+    }
+
     section { padding: 96px 24px; }
     .container { max-width: 1160px; margin: 0 auto; }
     .section-tag {
@@ -90,49 +106,38 @@
       align-items: center;
       gap: 6px;
       background: var(--accent-light);
-      color: var(--accent);
-      font-size: 12px;
+      color: var(--accent-dark);
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: .06em;
+      letter-spacing: .08em;
       text-transform: uppercase;
       padding: 6px 14px;
       border-radius: 100px;
       margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
     }
     .section-title {
-      font-family: 'Manrope', sans-serif;
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 800;
-      line-height: 1.2;
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 700;
+      line-height: 1.15;
       margin-bottom: 16px;
     }
     .section-sub {
-      font-size: 17px;
+      font-size: 16px;
       color: var(--text-muted);
       max-width: 560px;
       line-height: 1.7;
     }
 
-    /* ─── HERO ─── */
     #hero {
       padding-top: 140px;
       padding-bottom: 80px;
-      background: linear-gradient(160deg, #fff 60%, #ede9fe 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    #hero::before {
-      content: '';
-      position: absolute;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(124,58,237,.10) 0%, transparent 70%);
-      top: -100px; right: -100px;
-      pointer-events: none;
+      background: linear-gradient(160deg, #FFF8F2 55%, #F5E4EA 100%);
     }
     .hero-inner {
       display: grid;
-      grid-template-columns: 1fr 420px;
+      grid-template-columns: 1fr 400px;
       gap: 64px;
       align-items: center;
     }
@@ -141,61 +146,53 @@
       align-items: center;
       gap: 8px;
       background: var(--accent-light);
-      border: 1px solid rgba(124,58,237,.2);
-      color: var(--accent);
+      border: 1px solid rgba(185,122,138,.25);
+      color: var(--accent-dark);
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 500;
       padding: 8px 18px;
       border-radius: 100px;
       margin-bottom: 24px;
     }
-    .hero-badge::before { content: '✦'; font-size: 10px; }
+    .hero-badge::before { content: '✿'; font-size: 13px; color: var(--accent); }
     h1 {
-      font-family: 'Manrope', sans-serif;
-      font-size: clamp(36px, 5.5vw, 64px);
-      font-weight: 800;
-      line-height: 1.1;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 700;
+      line-height: 1.05;
       letter-spacing: -.02em;
       margin-bottom: 24px;
     }
-    h1 em {
-      font-style: normal;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    h1 em { font-style: italic; color: var(--accent); }
     .hero-desc {
-      font-size: 18px;
+      font-size: 17px;
       color: var(--text-muted);
       margin-bottom: 40px;
-      max-width: 520px;
-      line-height: 1.75;
+      max-width: 500px;
+      line-height: 1.8;
     }
-    .hero-cta {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 14px 28px;
+      padding: 13px 28px;
       border-radius: 100px;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
       border: none;
-      transition: all .2s;
+      transition: all .22s;
+      font-family: 'Inter', sans-serif;
     }
     .btn-primary {
       background: var(--accent);
       color: #fff;
-      box-shadow: 0 4px 20px rgba(124,58,237,.35);
+      box-shadow: 0 4px 20px rgba(185,122,138,.38);
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(124,58,237,.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(185,122,138,.45); }
     .btn-outline {
       background: transparent;
       color: var(--text);
@@ -203,46 +200,32 @@
     }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
-    .hero-stats {
-      display: flex;
-      gap: 32px;
-      margin-top: 48px;
-    }
-    .stat { }
+    .hero-stats { display: flex; gap: 36px; margin-top: 48px; }
     .stat-num {
-      font-family: 'Manrope', sans-serif;
-      font-size: 30px;
-      font-weight: 800;
-      color: var(--text);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
     }
-    .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+    .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
 
-    .hero-visual {
-      position: relative;
-    }
+    .hero-visual { position: relative; }
     .hero-photo-wrap {
       width: 100%;
       aspect-ratio: 3/4;
-      border-radius: 32px;
+      border-radius: 40px 40px 40px 120px;
       overflow: hidden;
-      background: linear-gradient(135deg, var(--accent-light), var(--accent2-light));
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: linear-gradient(135deg, #F5E4EA, #FAF0E6);
+      display: flex; align-items: center; justify-content: center;
       box-shadow: var(--shadow-md);
-      position: relative;
+      border: 1px solid var(--border);
     }
     .hero-photo-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      color: var(--accent);
-      opacity: .5;
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+      color: var(--accent); opacity: .4;
     }
     .hero-photo-placeholder svg { width: 64px; height: 64px; }
-    .hero-photo-placeholder span { font-size: 14px; font-weight: 500; }
-
     .hero-card {
       position: absolute;
       background: var(--surface);
@@ -250,385 +233,118 @@
       border-radius: 14px;
       padding: 12px 18px;
       box-shadow: var(--shadow);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 600;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; font-weight: 600;
     }
-    .hero-card-1 { bottom: 32px; left: -32px; }
-    .hero-card-2 { top: 48px; right: -24px; }
+    .hero-card-1 { bottom: 32px; left: -28px; }
+    .hero-card-2 { top: 48px; right: -20px; }
     .hero-card-icon {
-      width: 36px; height: 36px;
-      border-radius: 10px;
+      width: 34px; height: 34px; border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
+      font-size: 17px; flex-shrink: 0;
     }
 
-    /* ─── ABOUT ─── */
     #about { background: var(--surface); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .about-list { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
-    .about-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 15px;
-      color: var(--text-muted);
-    }
-    .about-list li::before {
-      content: '✓';
-      flex-shrink: 0;
-      width: 22px; height: 22px;
-      background: var(--accent-light);
-      color: var(--accent);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 12px;
-      font-weight: 700;
-      margin-top: 2px;
-    }
-    .about-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .about-card {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-    }
-    .about-card-icon { font-size: 28px; margin-bottom: 10px; }
-    .about-card-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+    .about-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--text-muted); }
+    .about-list li::before { content: '✿'; flex-shrink: 0; color: var(--accent); font-size: 16px; margin-top: 1px; }
+    .about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .about-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+    .about-card-icon { font-size: 26px; margin-bottom: 10px; }
+    .about-card-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
     .about-card-text { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-    .about-card-span {
-      grid-column: span 2;
-      background: linear-gradient(135deg, var(--accent-light), var(--accent2-light));
-      border: none;
-    }
+    .about-card-span { grid-column: span 2; background: linear-gradient(135deg, #F5E4EA, #FAF0E0); border: none; }
 
-    /* ─── COURSES ─── */
     #courses { background: var(--bg); }
     .courses-header { text-align: center; margin-bottom: 56px; }
     .courses-header .section-sub { margin: 0 auto; }
-    .courses-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
+    .courses-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
     .course-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      transition: transform .2s, box-shadow .2s;
-      position: relative;
-      overflow: hidden;
+      padding: 30px;
+      display: flex; flex-direction: column;
+      transition: transform .22s, box-shadow .22s;
+      position: relative; overflow: hidden;
     }
-    .course-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-    .course-card.featured {
-      background: var(--accent);
-      border-color: transparent;
-      color: #fff;
-    }
+    .course-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .course-card.featured { background: linear-gradient(145deg, var(--accent) 0%, #9A5E6E 100%); border-color: transparent; color: #fff; }
     .course-card.featured .course-meta,
     .course-card.featured .course-desc,
-    .course-card.featured .course-tag { color: rgba(255,255,255,.75); }
+    .course-card.featured .course-tag { color: rgba(255,255,255,.78); }
     .course-card.featured .course-price { color: #fff; }
-    .course-badge {
-      position: absolute;
-      top: 20px; right: 20px;
-      background: rgba(255,255,255,.2);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 100px;
-    }
-    .course-icon {
-      width: 56px; height: 56px;
-      border-radius: 16px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 28px;
-      margin-bottom: 20px;
-      flex-shrink: 0;
-    }
+    .course-badge { position: absolute; top: 18px; right: 18px; background: rgba(255,255,255,.22); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 4px 11px; border-radius: 100px; }
+    .course-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 18px; flex-shrink: 0; }
     .course-icon-1 { background: var(--accent-light); }
-    .course-icon-2 { background: var(--accent3-light); }
+    .course-icon-2 { background: rgba(255,255,255,.18); }
     .course-icon-3 { background: var(--accent2-light); }
-    .course-card.featured .course-icon { background: rgba(255,255,255,.15); }
-
-    .course-tag {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-    .course-title {
-      font-family: 'Manrope', sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 12px;
-    }
-    .course-desc { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px; }
-    .course-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 28px;
-      flex: 1;
-    }
-    .course-features li {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-      font-size: 13.5px;
-    }
-    .course-features li::before {
-      content: '→';
-      flex-shrink: 0;
-      opacity: .5;
-      margin-top: 1px;
-    }
-    .course-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      margin-top: auto;
-    }
-    .course-card.featured .course-footer { border-color: rgba(255,255,255,.2); }
+    .course-tag { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-style: normal; }
+    .course-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; }
+    .course-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.65; margin-bottom: 18px; }
+    .course-features { list-style: none; display: flex; flex-direction: column; gap: 7px; margin-bottom: 24px; flex: 1; }
+    .course-features li { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; }
+    .course-features li::before { content: '→'; flex-shrink: 0; opacity: .45; margin-top: 1px; }
+    .course-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid var(--border); margin-top: auto; }
+    .course-card.featured .course-footer { border-color: rgba(255,255,255,.22); }
     .course-meta { font-size: 12px; color: var(--text-muted); }
-    .course-price {
-      font-family: 'Manrope', sans-serif;
-      font-weight: 800;
-      font-size: 20px;
-      color: var(--accent);
-    }
-    .course-cta {
-      display: block;
-      text-align: center;
-      margin-top: 20px;
-      padding: 12px;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all .2s;
-    }
-    .course-cta-light {
-      background: var(--accent-light);
-      color: var(--accent);
-    }
-    .course-cta-light:hover { background: var(--accent); color: #fff; }
-    .course-cta-white {
-      background: rgba(255,255,255,.15);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.3);
-    }
+    .course-price { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 22px; color: var(--accent); }
+    .course-cta { display: block; text-align: center; margin-top: 18px; padding: 11px; border-radius: 12px; font-size: 13.5px; font-weight: 600; text-decoration: none; transition: all .2s; }
+    .course-cta-rose { background: var(--accent-light); color: var(--accent-dark); }
+    .course-cta-rose:hover { background: var(--accent); color: #fff; }
+    .course-cta-white { background: rgba(255,255,255,.18); color: #fff; border: 1px solid rgba(255,255,255,.32); }
     .course-cta-white:hover { background: #fff; color: var(--accent); }
 
-    /* ─── REVIEWS ─── */
     #reviews { background: var(--surface); }
-    .reviews-header { text-align: center; margin-bottom: 56px; }
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .review-card {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .review-stars { color: var(--accent3); font-size: 14px; letter-spacing: 2px; }
-    .review-text { font-size: 14.5px; line-height: 1.7; color: var(--text-muted); font-style: italic; }
-    .review-author { display: flex; align-items: center; gap: 12px; }
-    .review-avatar {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
-      font-weight: 700;
-      color: #fff;
-      flex-shrink: 0;
-    }
-    .review-name { font-weight: 600; font-size: 14px; }
+    .reviews-header { text-align: center; margin-bottom: 52px; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .review-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column; gap: 14px; }
+    .review-stars { color: var(--accent); font-size: 13px; letter-spacing: 3px; }
+    .review-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; line-height: 1.72; color: var(--text-muted); }
+    .review-author { display: flex; align-items: center; gap: 11px; }
+    .review-avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .review-name { font-weight: 600; font-size: 13.5px; }
     .review-course { font-size: 12px; color: var(--text-muted); }
 
-    /* ─── FAQ ─── */
     #faq { background: var(--bg); }
-    .faq-inner {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 80px;
-      align-items: start;
-    }
+    .faq-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
     .faq-list { display: flex; flex-direction: column; gap: 2px; }
-    .faq-item {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: var(--surface);
-    }
-    .faq-question {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 24px;
-      font-weight: 600;
-      font-size: 15px;
-      cursor: pointer;
-      user-select: none;
-      gap: 16px;
-    }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+    .faq-question { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; font-weight: 600; font-size: 14.5px; cursor: pointer; user-select: none; gap: 16px; }
     .faq-question:hover { color: var(--accent); }
-    .faq-icon {
-      flex-shrink: 0;
-      width: 24px; height: 24px;
-      border-radius: 50%;
-      background: var(--surface2);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px;
-      font-weight: 700;
-      transition: transform .2s, background .2s;
-    }
+    .faq-icon { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; transition: transform .2s, background .2s; }
     .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--accent-light); color: var(--accent); }
-    .faq-answer {
-      display: none;
-      padding: 0 24px 20px;
-      font-size: 14.5px;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
+    .faq-answer { display: none; padding: 0 22px 18px; font-size: 14px; color: var(--text-muted); line-height: 1.72; }
     .faq-item.open .faq-answer { display: block; }
 
-    /* ─── CONTACT ─── */
-    #contact {
-      background: linear-gradient(135deg, var(--accent) 0%, #5b21b6 100%);
-      color: #fff;
-      text-align: center;
-    }
+    #contact { background: linear-gradient(135deg, #B97A8A 0%, #8A5060 100%); color: #fff; text-align: center; }
     #contact .section-tag { background: rgba(255,255,255,.15); color: #fff; }
     #contact .section-title { color: #fff; }
-    #contact .section-sub { color: rgba(255,255,255,.75); margin: 0 auto 48px; }
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.2);
-      color: #fff;
-      text-decoration: none;
-      padding: 14px 24px;
-      border-radius: 14px;
-      font-weight: 600;
-      font-size: 15px;
-      transition: all .2s;
-    }
-    .contact-link:hover { background: rgba(255,255,255,.25); transform: translateY(-2px); }
-    .contact-link-icon { font-size: 20px; }
-    .contact-form {
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 24px;
-      padding: 40px;
-      max-width: 560px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .form-title {
-      font-family: 'Manrope', sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 24px;
-      text-align: center;
-    }
-    .form-row { margin-bottom: 16px; }
-    .form-row label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; opacity: .8; }
-    .form-row input,
-    .form-row select,
-    .form-row textarea {
-      width: 100%;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.25);
-      border-radius: 10px;
-      padding: 12px 16px;
-      color: #fff;
-      font-size: 14px;
-      font-family: inherit;
-      outline: none;
-      transition: border .2s;
-    }
-    .form-row input::placeholder,
-    .form-row textarea::placeholder { color: rgba(255,255,255,.4); }
-    .form-row input:focus,
-    .form-row select:focus,
-    .form-row textarea:focus { border-color: rgba(255,255,255,.6); }
+    #contact .section-sub { color: rgba(255,255,255,.78); margin: 0 auto 44px; }
+    .contact-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
+    .contact-link { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.22); color: #fff; text-decoration: none; padding: 13px 22px; border-radius: 14px; font-weight: 600; font-size: 14px; transition: all .2s; }
+    .contact-link:hover { background: rgba(255,255,255,.26); transform: translateY(-2px); }
+    .contact-form { background: rgba(255,255,255,.11); border: 1px solid rgba(255,255,255,.22); border-radius: 24px; padding: 38px; max-width: 540px; margin: 0 auto; text-align: left; }
+    .form-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; font-weight: 700; margin-bottom: 22px; text-align: center; }
+    .form-row { margin-bottom: 14px; }
+    .form-row label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 7px; opacity: .82; }
+    .form-row input, .form-row select, .form-row textarea { width: 100%; background: rgba(255,255,255,.11); border: 1px solid rgba(255,255,255,.26); border-radius: 10px; padding: 11px 15px; color: #fff; font-size: 14px; font-family: inherit; outline: none; transition: border .2s; }
+    .form-row input::placeholder, .form-row textarea::placeholder { color: rgba(255,255,255,.42); }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: rgba(255,255,255,.62); }
     .form-row select option { color: var(--text); background: #fff; }
-    .form-row textarea { resize: vertical; min-height: 100px; }
-    .btn-form {
-      width: 100%;
-      background: #fff;
-      color: var(--accent);
-      padding: 14px;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      transition: all .2s;
-      margin-top: 8px;
-    }
-    .btn-form:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+    .form-row textarea { resize: vertical; min-height: 90px; }
+    .btn-form { width: 100%; background: #fff; color: var(--accent); padding: 13px; border-radius: 12px; font-size: 14.5px; font-weight: 700; border: none; cursor: pointer; font-family: inherit; transition: all .2s; margin-top: 8px; }
+    .btn-form:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
 
-    /* ─── FOOTER ─── */
-    footer {
-      background: var(--text);
-      color: rgba(255,255,255,.5);
-      text-align: center;
-      padding: 32px 24px;
-      font-size: 13px;
-    }
-    footer span { color: rgba(255,255,255,.8); }
+    footer { background: #2A1510; color: rgba(255,255,255,.45); text-align: center; padding: 28px 24px; font-size: 13px; }
+    footer span { color: rgba(255,255,255,.75); }
 
-    /* ─── ANIMATIONS ─── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
+    .caveat { font-family: 'Caveat', cursive; font-size: 18px; color: var(--accent); display: block; margin-bottom: 4px; }
+
+    .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-    /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
       .hero-visual { display: none; }
@@ -643,13 +359,14 @@
       .about-cards { grid-template-columns: 1fr; }
       .about-card-span { grid-column: span 1; }
       .hero-stats { gap: 20px; flex-wrap: wrap; }
-      .contact-form { padding: 28px 20px; }
+      .contact-form { padding: 26px 18px; }
     }
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<canvas id="sakura-canvas"></canvas>
+
 <header>
   <div class="header-inner">
     <a href="#" class="logo">Мария<span>.</span>AI</a>
@@ -663,74 +380,51 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section id="hero">
   <div class="container">
     <div class="hero-inner">
       <div>
         <div class="hero-badge">Эксперт по нейросетям и AI-инструментам</div>
         <h1>Мария<br /><em>Светикова</em></h1>
-        <p class="hero-desc">
-          Помогаю ивенторам, творческим людям и ведущим внедрять нейросети в работу — без технического бэкграунда, с конкретными результатами уже на первом уроке.
-        </p>
+        <p class="hero-desc">Помогаю ивенторам, творческим людям и ведущим внедрять нейросети в работу — без технического бэкграунда, с конкретными результатами уже на первом уроке.</p>
         <div class="hero-cta">
           <a href="#courses" class="btn btn-primary">Смотреть курсы →</a>
           <a href="#about" class="btn btn-outline">Узнать обо мне</a>
         </div>
         <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-num">500+</div>
-            <div class="stat-label">Студентов</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">3</div>
-            <div class="stat-label">Авторских курса</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">4.9★</div>
-            <div class="stat-label">Средний рейтинг</div>
-          </div>
+          <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Студентов</div></div>
+          <div class="stat"><div class="stat-num">3</div><div class="stat-label">Авторских курса</div></div>
+          <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Средний рейтинг</div></div>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-photo-wrap">
           <div class="hero-photo-placeholder">
-            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="32" cy="24" r="12"/>
-              <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24"/>
-            </svg>
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="32" cy="24" r="12"/><path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24"/></svg>
             <span>Фото</span>
           </div>
         </div>
         <div class="hero-card hero-card-1">
-          <div class="hero-card-icon" style="background:#ede9fe;">🧠</div>
-          <div>
-            <div style="font-size:12px;color:var(--text-muted);">Новый урок</div>
-            <div>Нейропрокачка</div>
-          </div>
+          <div class="hero-card-icon" style="background:var(--accent-light);">🧠</div>
+          <div><div style="font-size:11px;color:var(--text-muted);">Новый урок</div><div>Нейропрокачка</div></div>
         </div>
         <div class="hero-card hero-card-2">
-          <div class="hero-card-icon" style="background:#ecfeff;">🎵</div>
-          <div>
-            <div style="font-size:12px;color:var(--text-muted);">Популярный</div>
-            <div>Suno с нуля</div>
-          </div>
+          <div class="hero-card-icon" style="background:var(--accent2-light);">🎵</div>
+          <div><div style="font-size:11px;color:var(--text-muted);">Популярный</div><div>Suno с нуля</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="container">
     <div class="about-grid">
       <div class="fade-up">
-        <div class="section-tag">✦ Обо мне</div>
-        <h2 class="section-title">Почему именно я?</h2>
-        <p class="section-sub">
-          Я — практик, а не теоретик. Каждый инструмент, о котором рассказываю, я проверила в реальных проектах.
-        </p>
+        <div class="section-tag">✿ Обо мне</div>
+        <span class="caveat">Почему именно я?</span>
+        <h2 class="section-title">Практик, а не теоретик</h2>
+        <p class="section-sub">Каждый инструмент, о котором рассказываю, я проверила в реальных проектах.</p>
         <ul class="about-list">
           <li>Эксперт по AI-инструментам с опытом в event-индустрии</li>
           <li>Провожу живые мастер-классы и онлайн-курсы для взрослых без технического бэкграунда</li>
@@ -740,77 +434,46 @@
         </ul>
       </div>
       <div class="about-cards fade-up" style="transition-delay:.15s">
-        <div class="about-card">
-          <div class="about-card-icon">🎯</div>
-          <div class="about-card-title">Практический фокус</div>
-          <div class="about-card-text">Только то, что реально работает и экономит время</div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-icon">⚡</div>
-          <div class="about-card-title">Быстрый старт</div>
-          <div class="about-card-text">Первый результат — уже на первом занятии</div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-icon">💬</div>
-          <div class="about-card-title">Живая поддержка</div>
-          <div class="about-card-text">Чат с куратором на весь период обучения</div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-icon">🔄</div>
-          <div class="about-card-title">Обновления</div>
-          <div class="about-card-text">Материалы обновляются вместе с миром AI</div>
-        </div>
-        <div class="about-card about-card-span" style="background:linear-gradient(135deg,#ede9fe,#ecfeff);">
-          <div class="about-card-icon">🚀</div>
-          <div class="about-card-title">Нейросети — это не страшно</div>
-          <div class="about-card-text">Мои курсы созданы специально для людей, которые никогда не работали с AI. Шаг за шагом, без воды и технического жаргона.</div>
-        </div>
+        <div class="about-card"><div class="about-card-icon">🎯</div><div class="about-card-title">Практический фокус</div><div class="about-card-text">Только то, что реально работает и экономит время</div></div>
+        <div class="about-card"><div class="about-card-icon">⚡</div><div class="about-card-title">Быстрый старт</div><div class="about-card-text">Первый результат — уже на первом занятии</div></div>
+        <div class="about-card"><div class="about-card-icon">💬</div><div class="about-card-title">Живая поддержка</div><div class="about-card-text">Чат с куратором на весь период обучения</div></div>
+        <div class="about-card"><div class="about-card-icon">🔄</div><div class="about-card-title">Обновления</div><div class="about-card-text">Материалы обновляются вместе с миром AI</div></div>
+        <div class="about-card about-card-span"><div class="about-card-icon">🌸</div><div class="about-card-title">Нейросети — это не страшно</div><div class="about-card-text">Мои курсы созданы специально для людей, которые никогда не работали с AI. Шаг за шагом, без воды и технического жаргона.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COURSES -->
 <section id="courses">
   <div class="container">
     <div class="courses-header fade-up">
-      <div class="section-tag">✦ Курсы</div>
+      <div class="section-tag">✿ Курсы</div>
+      <span class="caveat" style="display:block;text-align:center;font-size:20px;">три авторские программы</span>
       <h2 class="section-title">Выберите свой курс</h2>
-      <p class="section-sub">Три авторских программы — для разных задач и уровней подготовки</p>
+      <p class="section-sub">Для разных задач и уровней подготовки</p>
     </div>
     <div class="courses-grid">
-
-      <!-- Course 1 -->
       <div class="course-card fade-up" style="transition-delay:.1s">
         <div class="course-icon course-icon-1">🧠</div>
         <div class="course-tag">Для ивенторов</div>
         <div class="course-title">Нейропрокачка для ивентора</div>
-        <div class="course-desc">
-          Внедряйте нейросети в каждый этап организации мероприятий — от идеи до отчёта. Экономьте время и удивляйте клиентов.
-        </div>
+        <div class="course-desc">Внедряйте нейросети в каждый этап организации мероприятий — от идеи до отчёта.</div>
         <ul class="course-features">
           <li>Генерация идей и концепций мероприятий</li>
           <li>Создание текстов, сценариев, КП за минуты</li>
           <li>AI-дизайн: афиши, баннеры, декорации</li>
-          <li>Автоматизация рутины: брифы, отчёты, переписка</li>
+          <li>Автоматизация рутины: брифы, отчёты</li>
           <li>Инструменты для работы с подрядчиками</li>
         </ul>
-        <div class="course-footer">
-          <div class="course-meta">6 недель · 24 урока</div>
-          <div class="course-price">от 7 900 ₽</div>
-        </div>
-        <a href="#contact" class="course-cta course-cta-light">Записаться на курс</a>
+        <div class="course-footer"><div class="course-meta">6 недель · 24 урока</div><div class="course-price">от 7 900 ₽</div></div>
+        <a href="#contact" class="course-cta course-cta-rose">Записаться на курс</a>
       </div>
-
-      <!-- Course 2 — Featured -->
       <div class="course-card featured fade-up" style="transition-delay:.2s">
         <div class="course-badge">Хит продаж</div>
-        <div class="course-icon" style="background:rgba(255,255,255,.15);">🎵</div>
+        <div class="course-icon course-icon-2">🎵</div>
         <div class="course-tag">Для творческих</div>
         <div class="course-title">Музыка Suno с нуля</div>
-        <div class="course-desc">
-          Создавайте треки, джинглы и музыкальные заставки с помощью AI за 15 минут — даже без музыкального образования.
-        </div>
+        <div class="course-desc">Создавайте треки, джинглы и заставки с помощью AI за 15 минут — без музыкального образования.</div>
         <ul class="course-features">
           <li>Знакомство с платформой Suno AI</li>
           <li>Промпты для разных жанров и настроений</li>
@@ -818,21 +481,14 @@
           <li>Авторские джинглы и позывные</li>
           <li>Права на использование и монетизация</li>
         </ul>
-        <div class="course-footer">
-          <div class="course-meta">4 недели · 16 уроков</div>
-          <div class="course-price">от 5 900 ₽</div>
-        </div>
+        <div class="course-footer"><div class="course-meta">4 недели · 16 уроков</div><div class="course-price">от 5 900 ₽</div></div>
         <a href="#contact" class="course-cta course-cta-white">Записаться на курс</a>
       </div>
-
-      <!-- Course 3 -->
       <div class="course-card fade-up" style="transition-delay:.3s">
         <div class="course-icon course-icon-3">🤖</div>
         <div class="course-tag">Для ведущих</div>
         <div class="course-title">Ведущий +1</div>
-        <div class="course-desc">
-          Ваш личный AI-ассистент: подготовка к мероприятиям, написание сценариев и работа с аудиторией с помощью нейросетей.
-        </div>
+        <div class="course-desc">Ваш личный AI-ассистент: подготовка к мероприятиям и написание сценариев с нейросетями.</div>
         <ul class="course-features">
           <li>Настройка персонального AI-ассистента</li>
           <li>Сценарии, тосты, интерактивы за минуты</li>
@@ -840,206 +496,130 @@
           <li>Голосовые помощники и шпаргалки</li>
           <li>Продвижение: контент-план, посты, сторис</li>
         </ul>
-        <div class="course-footer">
-          <div class="course-meta">5 недель · 20 уроков</div>
-          <div class="course-price">от 6 900 ₽</div>
-        </div>
-        <a href="#contact" class="course-cta course-cta-light">Записаться на курс</a>
+        <div class="course-footer"><div class="course-meta">5 недель · 20 уроков</div><div class="course-price">от 6 900 ₽</div></div>
+        <a href="#contact" class="course-cta course-cta-rose">Записаться на курс</a>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
 <section id="reviews">
   <div class="container">
     <div class="reviews-header fade-up">
-      <div class="section-tag">✦ Отзывы</div>
+      <div class="section-tag">✿ Отзывы</div>
+      <span class="caveat" style="display:block;text-align:center;font-size:20px;">говорят студенты</span>
       <h2 class="section-title">Что говорят студенты</h2>
-      <p class="section-sub">Реальные истории людей, которые уже изменили свою работу с помощью AI</p>
+      <p class="section-sub" style="margin:0 auto;">Реальные истории людей, которые уже изменили свою работу с помощью AI</p>
     </div>
     <div class="reviews-grid">
-
-      <div class="review-card fade-up" style="transition-delay:.1s">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">«Записалась на "Нейропрокачку" с нулевым опытом в AI. Уже через неделю генерировала концепции мероприятий в 5 раз быстрее. Мария объясняет так, что всё понятно сразу!»</div>
-        <div class="review-author">
-          <div class="review-avatar" style="background:var(--accent);">А</div>
-          <div>
-            <div class="review-name">Анастасия К.</div>
-            <div class="review-course">Нейропрокачка для ивентора</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fade-up" style="transition-delay:.2s">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">«Курс по Suno — это магия. Я делаю авторскую музыку для своих мероприятий! Клиенты в восторге. Никогда не думала, что смогу создавать треки без музыкального образования.»</div>
-        <div class="review-author">
-          <div class="review-avatar" style="background:var(--accent3);">Е</div>
-          <div>
-            <div class="review-name">Екатерина М.</div>
-            <div class="review-course">Музыка Suno с нуля</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fade-up" style="transition-delay:.3s">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">«"Ведущий +1" — лучшее вложение в мою карьеру за последние годы. Теперь готовлюсь к свадьбам в 2 раза быстрее, сценарии пишу за час. Мария — настоящий профессионал!»</div>
-        <div class="review-author">
-          <div class="review-avatar" style="background:var(--accent2);">Д</div>
-          <div>
-            <div class="review-name">Дмитрий С.</div>
-            <div class="review-course">Ведущий +1</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fade-up" style="transition-delay:.1s">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">«Боялась, что AI — это сложно. Оказалось, Мария всё объясняет на пальцах. Теперь я создаю визуал для мероприятий сама — экономию на дизайнере за год уже окупила курс.»</div>
-        <div class="review-author">
-          <div class="review-avatar" style="background:#ec4899;">О</div>
-          <div>
-            <div class="review-name">Ольга Р.</div>
-            <div class="review-course">Нейропрокачка для ивентора</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fade-up" style="transition-delay:.2s">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">«Прошла два курса подряд — сначала Suno, потом про ведущего. Мария постоянно на связи, материалы обновляются. Это не просто курс, это комьюнити единомышленников.»</div>
-        <div class="review-author">
-          <div class="review-avatar" style="background:#10b981;">Н</div>
-          <div>
-            <div class="review-name">Наталья В.</div>
-            <div class="review-course">Музыка Suno + Ведущий +1</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fade-up" style="transition-delay:.3s">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">«Раньше думал, что AI-инструменты — это для программистов. Мария развеяла этот миф полностью. Уже применяю всё, что узнал, в реальных проектах. Рекомендую всем!»</div>
-        <div class="review-author">
-          <div class="review-avatar" style="background:#f59e0b;">И</div>
-          <div>
-            <div class="review-name">Иван Т.</div>
-            <div class="review-course">Ведущий +1</div>
-          </div>
-        </div>
-      </div>
-
+      <div class="review-card fade-up" style="transition-delay:.1s"><div class="review-stars">★★★★★</div><div class="review-text">«Записалась на "Нейропрокачку" с нулевым опытом в AI. Уже через неделю генерировала концепции мероприятий в 5 раз быстрее. Мария объясняет так, что всё понятно сразу!»</div><div class="review-author"><div class="review-avatar" style="background:var(--accent);">А</div><div><div class="review-name">Анастасия К.</div><div class="review-course">Нейропрокачка для ивентора</div></div></div></div>
+      <div class="review-card fade-up" style="transition-delay:.2s"><div class="review-stars">★★★★★</div><div class="review-text">«Курс по Suno — это магия. Я делаю авторскую музыку для своих мероприятий! Клиенты в восторге. Никогда не думала, что смогу создавать треки без музыкального образования.»</div><div class="review-author"><div class="review-avatar" style="background:var(--accent2);">Е</div><div><div class="review-name">Екатерина М.</div><div class="review-course">Музыка Suno с нуля</div></div></div></div>
+      <div class="review-card fade-up" style="transition-delay:.3s"><div class="review-stars">★★★★★</div><div class="review-text">«"Ведущий +1" — лучшее вложение в мою карьеру за последние годы. Теперь готовлюсь к свадьбам в 2 раза быстрее, сценарии пишу за час. Мария — настоящий профессионал!»</div><div class="review-author"><div class="review-avatar" style="background:#A0826D;">Д</div><div><div class="review-name">Дмитрий С.</div><div class="review-course">Ведущий +1</div></div></div></div>
+      <div class="review-card fade-up" style="transition-delay:.1s"><div class="review-stars">★★★★★</div><div class="review-text">«Боялась, что AI — это сложно. Оказалось, Мария всё объясняет на пальцах. Теперь я создаю визуал для мероприятий сама — экономию на дизайнере за год уже окупила курс.»</div><div class="review-author"><div class="review-avatar" style="background:#C4849A;">О</div><div><div class="review-name">Ольга Р.</div><div class="review-course">Нейропрокачка для ивентора</div></div></div></div>
+      <div class="review-card fade-up" style="transition-delay:.2s"><div class="review-stars">★★★★★</div><div class="review-text">«Прошла два курса подряд — сначала Suno, потом про ведущего. Мария постоянно на связи, материалы обновляются. Это не просто курс, это комьюнити единомышленников.»</div><div class="review-author"><div class="review-avatar" style="background:#B08060;">Н</div><div><div class="review-name">Наталья В.</div><div class="review-course">Suno + Ведущий +1</div></div></div></div>
+      <div class="review-card fade-up" style="transition-delay:.3s"><div class="review-stars">★★★★★</div><div class="review-text">«Раньше думал, что AI-инструменты — это для программистов. Мария развеяла этот миф полностью. Уже применяю всё в реальных проектах. Рекомендую всем!»</div><div class="review-author"><div class="review-avatar" style="background:#D4956A;">И</div><div><div class="review-name">Иван Т.</div><div class="review-course">Ведущий +1</div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
 <section id="faq">
   <div class="container">
     <div class="faq-inner">
       <div class="fade-up">
-        <div class="section-tag">✦ FAQ</div>
-        <h2 class="section-title">Частые вопросы</h2>
-        <p class="section-sub">Отвечаю на самые популярные вопросы о курсах и обучении</p>
-        <div style="margin-top:32px;">
-          <a href="#contact" class="btn btn-primary">Задать свой вопрос →</a>
-        </div>
+        <div class="section-tag">✿ FAQ</div>
+        <span class="caveat">Частые вопросы</span>
+        <h2 class="section-title">Отвечаю честно</h2>
+        <p class="section-sub">Самые популярные вопросы о курсах и обучении</p>
+        <div style="margin-top:28px;"><a href="#contact" class="btn btn-primary">Задать свой вопрос →</a></div>
       </div>
       <div class="faq-list fade-up" style="transition-delay:.15s">
-        <div class="faq-item">
-          <div class="faq-question">Нужен ли технический опыт для прохождения курсов? <div class="faq-icon">+</div></div>
-          <div class="faq-answer">Нет, совсем не нужен! Все курсы разработаны специально для людей без технического бэкграунда. Я объясняю каждый шаг простым языком, и вы будете получать результаты уже с первого урока.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Как проходит обучение — онлайн или офлайн? <div class="faq-icon">+</div></div>
-          <div class="faq-answer">Все курсы проходят онлайн в удобном для вас темпе. Видеоуроки доступны 24/7, а в закрытом чате я и кураторы отвечают на вопросы в течение 24 часов.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Сколько времени нужно уделять обучению в день? <div class="faq-icon">+</div></div>
-          <div class="faq-answer">Достаточно 30–60 минут в день. Уроки короткие (10–20 минут) и сразу с практическими заданиями. Обучение не мешает основной работе.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Есть ли доступ к материалам после окончания курса? <div class="faq-icon">+</div></div>
-          <div class="faq-answer">Да! Вы получаете бессрочный доступ ко всем материалам курса, включая обновления. Мир AI меняется быстро — я регулярно добавляю новые уроки.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Можно ли купить несколько курсов со скидкой? <div class="faq-icon">+</div></div>
-          <div class="faq-answer">Да! При покупке 2 курсов — скидка 15%, при покупке всех 3 курсов — скидка 25%. Напишите мне в контактах, и я подберу лучший вариант.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Выдаётся ли сертификат по итогам обучения? <div class="faq-icon">+</div></div>
-          <div class="faq-answer">Да, после выполнения всех практических заданий и финального проекта вы получаете именной сертификат об окончании курса.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Что делать, если курс не подойдёт? <div class="faq-icon">+</div></div>
-          <div class="faq-answer">В течение 7 дней с момента покупки я верну полную стоимость без лишних вопросов. Просто напишите мне.</div>
-        </div>
+        <div class="faq-item"><div class="faq-question">Нужен ли технический опыт для прохождения курсов? <div class="faq-icon">+</div></div><div class="faq-answer">Нет, совсем не нужен! Все курсы разработаны специально для людей без технического бэкграунда. Я объясняю каждый шаг простым языком, и вы будете получать результаты уже с первого урока.</div></div>
+        <div class="faq-item"><div class="faq-question">Как проходит обучение — онлайн или офлайн? <div class="faq-icon">+</div></div><div class="faq-answer">Все курсы проходят онлайн в удобном для вас темпе. Видеоуроки доступны 24/7, а в закрытом чате я и кураторы отвечают на вопросы в течение 24 часов.</div></div>
+        <div class="faq-item"><div class="faq-question">Сколько времени нужно уделять обучению в день? <div class="faq-icon">+</div></div><div class="faq-answer">Достаточно 30–60 минут в день. Уроки короткие (10–20 минут) и сразу с практическими заданиями. Обучение не мешает основной работе.</div></div>
+        <div class="faq-item"><div class="faq-question">Есть ли доступ к материалам после окончания курса? <div class="faq-icon">+</div></div><div class="faq-answer">Да! Вы получаете бессрочный доступ ко всем материалам курса, включая обновления. Мир AI меняется быстро — я регулярно добавляю новые уроки.</div></div>
+        <div class="faq-item"><div class="faq-question">Можно ли купить несколько курсов со скидкой? <div class="faq-icon">+</div></div><div class="faq-answer">Да! При покупке 2 курсов — скидка 15%, при покупке всех 3 курсов — скидка 25%. Напишите мне в контактах, и я подберу лучший вариант.</div></div>
+        <div class="faq-item"><div class="faq-question">Выдаётся ли сертификат по итогам обучения? <div class="faq-icon">+</div></div><div class="faq-answer">Да, после выполнения всех практических заданий и финального проекта вы получаете именной сертификат об окончании курса.</div></div>
+        <div class="faq-item"><div class="faq-question">Что делать, если курс не подойдёт? <div class="faq-icon">+</div></div><div class="faq-answer">В течение 7 дней с момента покупки я верну полную стоимость без лишних вопросов. Просто напишите мне.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <div class="section-tag">✦ Контакты</div>
+    <div class="section-tag">✿ Контакты</div>
+    <span class="caveat" style="color:rgba(255,255,255,.7);display:block;text-align:center;font-size:20px;margin-bottom:4px;">напишите мне</span>
     <h2 class="section-title">Готовы начать?</h2>
-    <p class="section-sub">
-      Выберите курс, задайте вопрос или просто напишите — отвечу в течение часа
-    </p>
-
+    <p class="section-sub">Выберите курс, задайте вопрос или просто напишите — отвечу в течение часа</p>
     <div class="contact-links">
-      <a href="https://t.me/" class="contact-link">
-        <span class="contact-link-icon">✈️</span> Telegram
-      </a>
-      <a href="https://wa.me/" class="contact-link">
-        <span class="contact-link-icon">💬</span> WhatsApp
-      </a>
-      <a href="https://instagram.com/" class="contact-link">
-        <span class="contact-link-icon">📸</span> Instagram
-      </a>
+      <a href="https://t.me/" class="contact-link"><span>✈️</span> Telegram</a>
+      <a href="https://wa.me/" class="contact-link"><span>💬</span> WhatsApp</a>
+      <a href="https://instagram.com/" class="contact-link"><span>📸</span> Instagram</a>
     </div>
-
     <div class="contact-form">
       <div class="form-title">Оставить заявку</div>
-      <div class="form-row">
-        <label>Ваше имя</label>
-        <input type="text" placeholder="Как вас зовут?" />
-      </div>
-      <div class="form-row">
-        <label>Телефон или Telegram</label>
-        <input type="text" placeholder="+7 или @username" />
-      </div>
-      <div class="form-row">
-        <label>Интересующий курс</label>
-        <select>
-          <option value="">Выберите курс</option>
-          <option>Нейропрокачка для ивентора</option>
-          <option>Музыка Suno с нуля</option>
-          <option>Ведущий +1</option>
-          <option>Все три курса (со скидкой 25%)</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <label>Вопрос или комментарий (необязательно)</label>
-        <textarea placeholder="Напишите, если есть вопросы..."></textarea>
-      </div>
+      <div class="form-row"><label>Ваше имя</label><input type="text" placeholder="Как вас зовут?" /></div>
+      <div class="form-row"><label>Телефон или Telegram</label><input type="text" placeholder="+7 или @username" /></div>
+      <div class="form-row"><label>Интересующий курс</label><select><option value="">Выберите курс</option><option>Нейропрокачка для ивентора</option><option>Музыка Suno с нуля</option><option>Ведущий +1</option><option>Все три курса (скидка 25%)</option></select></div>
+      <div class="form-row"><label>Вопрос или комментарий (необязательно)</label><textarea placeholder="Напишите, если есть вопросы..."></textarea></div>
       <button class="btn-form" onclick="handleSubmit(event)">Отправить заявку →</button>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2024 <span>Мария Светикова</span> — Эксперт по нейросетям и AI-инструментам</p>
 </footer>
 
 <script>
-  // FAQ accordion
+  const canvas = document.getElementById('sakura-canvas');
+  const ctx = canvas.getContext('2d');
+  let petals = [];
+  const COLORS = ['#F2A7BC','#EBA0B5','#F7C5D5','#E8909E','#F9D5DF','#D4849A'];
+
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function drawPetal(x, y, r, angle, color, alpha) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+    ctx.beginPath();
+    ctx.moveTo(0, -r);
+    ctx.bezierCurveTo(r*.6, -r*.8, r*.9, 0, 0, r);
+    ctx.bezierCurveTo(-r*.9, 0, -r*.6, -r*.8, 0, -r);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(0, -r*.05, r*.18, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(255,255,255,.35)';
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function spawnPetal() {
+    petals.push({ x: Math.random()*canvas.width, y: -20, r: 6+Math.random()*7, speed: .6+Math.random()*1.2, drift: (Math.random()-.5)*.8, angle: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.04, color: COLORS[Math.floor(Math.random()*COLORS.length)], alpha: .55+Math.random()*.35, sway: Math.random()*Math.PI*2, swaySpeed: .01+Math.random()*.015 });
+  }
+
+  let frame = 0;
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    frame++;
+    if (frame%6===0 && petals.length<55) spawnPetal();
+    petals = petals.filter(p => p.y < canvas.height+30);
+    for (const p of petals) {
+      p.sway += p.swaySpeed;
+      p.x += p.drift + Math.sin(p.sway)*.6;
+      p.y += p.speed;
+      p.angle += p.spin;
+      drawPetal(p.x, p.y, p.r, p.angle, p.color, p.alpha);
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+
   document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', () => {
       const item = q.closest('.faq-item');
@@ -1049,19 +629,17 @@
     });
   });
 
-  // Scroll animations
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Form
   function handleSubmit(e) {
     e.preventDefault();
     const btn = e.target;
-    btn.textContent = '✓ Заявка отправлена!';
-    btn.style.background = '#d1fae5';
-    btn.style.color = '#065f46';
+    btn.textContent = '🌸 Заявка отправлена!';
+    btn.style.background = '#fce8f0';
+    btn.style.color = '#9A5E6E';
     setTimeout(() => { btn.textContent = 'Отправить заявку →'; btn.style.background = ''; btn.style.color = ''; }, 3000);
   }
 </script>
